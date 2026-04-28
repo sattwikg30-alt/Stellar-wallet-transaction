@@ -43,24 +43,64 @@ The StellarPay dashboard provides a comprehensive suite of tools for web3 users:
 
 ---
 
-## � Project Structure
+## 📂 Project Structure
 
 ```text
-steller/
+stellar/
 ├── public/              # Static assets (images, icons, etc.)
+│   ├── logo.png
+│   └── ... (svg icons)
 ├── src/
-│   ├── app/             # Next.js App Router (pages, layout, globals)
-│   ├── components/      # UI components (BalanceCard, SendForm, etc.)
-│   ├── hooks/           # Custom React hooks (useWallet, useBalance, etc.)
-│   ├── services/        # Stellar SDK logic (transactions, wallet, history)
-│   └── types/           # TypeScript interfaces and types
-├── package.json         # Project dependencies and scripts
+│   ├── app/             # Next.js App Router
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/      # UI components
+│   │   ├── BalanceCard.tsx
+│   │   ├── SendForm.tsx
+│   │   ├── ToastProvider.tsx
+│   │   ├── TransactionHistory.tsx
+│   │   ├── TransactionStatus.tsx
+│   │   └── WalletButton.tsx
+│   ├── hooks/           # Custom React hooks
+│   │   ├── useAddressBook.ts
+│   │   ├── useBalance.ts
+│   │   ├── useHistory.ts
+│   │   └── useWallet.ts
+│   ├── services/        # Stellar SDK logic
+│   │   ├── history.ts
+│   │   ├── stellar.ts
+│   │   ├── transaction.ts
+│   │   └── wallet.ts
+│   └── types/           # TypeScript definitions
+│       ├── history.ts
+│       └── transaction.ts
+├── package.json         # Project dependencies
 └── tsconfig.json        # TypeScript configuration
 ```
 
 ---
 
-## �💡 Why Stellar for Payments?
+## 🚀 Deployment
+
+The project is already live and deployed on **Vercel**. You can access the production version here:
+
+🔗 **Live Demo:** [StellarPay on Vercel](https://stellarpay-now.vercel.app//) 
+
+### Continuous Integration
+- **Automatic Deploys:** Every push to the `main` branch triggers a new deployment automatically via Vercel's GitHub integration.
+- **Preview Deployments:** Pull Requests generate unique preview URLs to test changes before merging.
+
+### Manual Build
+If you wish to create a production build locally:
+```bash
+npm run build
+npm run start
+```
+
+---
+
+## 💡 Why Stellar for Payments?
 Stellar is the ideal backbone for StellarPay due to:
 * **Instant Settlement (3-5 seconds):** Payment transfers are finalized almost immediately.
 * **Ultra-Low Fees:** Transaction fees are nominal (0.00001 XLM), making even micro-transactions completely viable.
@@ -68,19 +108,25 @@ Stellar is the ideal backbone for StellarPay due to:
 
 ---
 
+## 🔐 Security & Best Practices
+
+- **Freighter Wallet:** This app uses the Freighter extension, which ensures your private keys never leave your browser.
+- **Testnet Only:** Always ensure your wallet is set to **Testnet** before interacting with the application.
+- **No Secret Keys:** Never hardcode secret keys or mnemonic phrases in the frontend.
+
+---
+
 ## 🛠️ Getting Started (Testnet)
 
-This application is currently running on the Stellar Testnet.
-
 ### Prerequisites
-1. **Stellar Wallet:** Install a compatible wallet (e.g., [Freighter](https://www.stellar.org/wallet-list)).
-2. **Funded Account:** Ensure you have Testnet XLM in your Freighter account (you can fund it directly within the extension's settings by utilizing the Friendbot).
+1. **Stellar Wallet:** Install the [Freighter](https://www.stellar.org/wallet-list) browser extension.
+2. **Funded Account:** Use the [Stellar Friendbot](https://laboratory.stellar.org/#friendbot) to fund your Testnet account with XLM.
 
 ### Installation Steps
 
 1. **Clone the Repository:**
 ```bash
-git clone [https://github.com/sattwikg30-alt/Stellar-wallet-transaction.git]
+git clone https://github.com/sattwikg30-alt/Stellar-wallet-transaction.git
 cd stellar
 ```
 
@@ -94,7 +140,7 @@ npm install
 npm run dev
 ```
 
-4. **Access the Application:** Open your browser and navigate to `http://localhost:3000`.
+4. **Access the Application:** Open `http://localhost:3000` in your browser.
 
 ---
 
@@ -112,4 +158,24 @@ Transaction Success
 ![Transaction History](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385895/Screenshot_2026-04-28_194756_bpvel4.png)
 Transaction History
 
-🎬 **Drive screen recording ->** [https://drive.google.com/file/d/1qS6jRsXo22z_shPaKqWxqnP_NX1DCPqZ/view?usp=drive_link](https://drive.google.com/file/d/1qS6jRsXo22z_shPaKqWxqnP_NX1DCPqZ/view?usp=drive_link)
+![Transaction shown on Stellar expert explorer](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777389461/Screenshot_2026-04-28_204600_yufdqf.png)
+Transaction shown on Stellar expert explorer
+
+🎬 **Drive screen recording ->** [https://drive.google.com/file/d/1Erfv90So6tra-slONsxcD7C15tw4wgeQ/view?usp=drive_link](https://drive.google.com/file/d/1Erfv90So6tra-slONsxcD7C15tw4wgeQ/view?usp=drive_link)
+
+
+## 📚 Learning Resources
+
+| Category | Resource | Link |
+| :--- | :--- | :--- |
+| **Stellar Blockchain** | Stellar Docs | [developers.stellar.org](https://developers.stellar.org/docs) |
+| | Stellar Laboratory | [laboratory.stellar.org](https://laboratory.stellar.org/) |
+| | Stellar Expert (Explorer) | [stellar.expert](https://stellar.expert/explorer/testnet) |
+| | Stellar Wallets Kit | [github.com/stellar/wallets-kit](https://github.com/stellar/stellar-wallets-kit) |
+| | GitHub Repository | [github.com/stellar/js-stellar-sdk](https://github.com/stellar/js-stellar-sdk) |
+| | Documentation | [stellar.github.io/js-stellar-sdk](https://stellar.github.io/js-stellar-sdk/) |
+| **Frontend Technologies** | Next.js Documentation | [nextjs.org/docs](https://nextjs.org/docs) |
+| | Tailwind CSS | [tailwindcss.com/docs](https://tailwindcss.com/docs) |
+| | React Icons | [react-icons.github.io](https://react-icons.github.io/react-icons/) |
+
+---
