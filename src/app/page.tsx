@@ -26,23 +26,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-black font-sans selection:bg-purple-500/30">
-      {/* Dynamic top gradient bar */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500"></div>
-      
-      <div className="flex-1 flex flex-col p-6 sm:p-10 max-w-6xl w-full mx-auto relative z-10">
-        
-        {/* Decorative background blurs for premium feel */}
-        <div className="fixed top-20 left-20 w-[500px] h-[500px] bg-blue-500/20 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10 mix-blend-multiply dark:mix-blend-screen"></div>
-        <div className="fixed bottom-20 right-20 w-[600px] h-[600px] bg-purple-500/20 dark:bg-purple-600/10 rounded-full blur-[150px] pointer-events-none -z-10 mix-blend-multiply dark:mix-blend-screen"></div>
-
-        <header className="flex justify-between items-center w-full mb-16">
-          <div className="text-xl sm:text-2xl font-bold tracking-tight text-slate-800 dark:text-white flex items-center gap-3">
-            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg shadow-purple-500/20">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            </div>
-            <span>Stellar<span className="text-purple-600 font-black">App</span></span>
+      {/* Fixed top header (gradient + navbar) */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 shadow-sm">
+        <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500"></div>
+        <div className="flex justify-between items-center px-6 sm:px-10 py-4 max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="StellerPay Logo" className="w-10 h-10 object-contain rounded-xl shadow-sm" />
+            <span className="text-xl sm:text-2xl font-bold tracking-tight text-slate-800 dark:text-white leading-none">
+              Steller<span className="text-blue-500 dark:text-blue-400 font-black">Pay</span>
+            </span>
           </div>
           
           <WalletButton
@@ -51,9 +43,16 @@ export default function Home() {
             onConnect={connect}
             onDisconnect={disconnect}
           />
-        </header>
+        </div>
+      </header>
+      
+      <div className="flex-1 flex flex-col p-6 sm:p-10 max-w-6xl w-full mx-auto relative z-10">
+        
+        {/* Decorative background blurs for premium feel */}
+        <div className="fixed top-20 left-20 w-[500px] h-[500px] bg-blue-500/20 dark:bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10 mix-blend-multiply dark:mix-blend-screen"></div>
+        <div className="fixed bottom-20 right-20 w-[600px] h-[600px] bg-purple-500/20 dark:bg-purple-600/10 rounded-full blur-[150px] pointer-events-none -z-10 mix-blend-multiply dark:mix-blend-screen"></div>
 
-        <main className="flex-1 flex flex-col w-full pb-20 fade-in-up">
+        <main className="flex-1 flex flex-col w-full pb-20 pt-32 fade-in-up">
           <div className="flex flex-col items-center max-w-3xl mx-auto text-center space-y-6 mb-12">
             <h1 className="text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-7xl leading-tight">
               Explore the <br/>
@@ -137,9 +136,8 @@ export default function Home() {
         </main>
       </div>
 
-      <footer className="w-full py-8 text-center text-sm font-medium text-slate-400 dark:text-zinc-600 z-10">
-         Built with standard Next.js, Tailwind CSS, & Stellar SDK
-      </footer>
+      {/* Empty footer replacement to maintain scroll spacing */}
+      <footer className="w-full py-4 relative z-10"></footer>
       
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeInUp {

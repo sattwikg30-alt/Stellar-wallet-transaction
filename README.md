@@ -6,10 +6,13 @@ A modern, production-ready decentralized application built on the Stellar Networ
 
 This dApp meets the Stellar White Belt Level 1 requirements and implements the following features flawlessly:
 
-- **Wallet Connection Flow**: Seamless integration with the Freighter Wallet browser extension (`@stellar/freighter-api`), equipped with fallback and allowance handling so transactions sign instantly without looping auth prompts.
+- **Wallet Connection Flow**: Seamless integration with the Freighter Wallet browser extension (`@stellar/freighter-api`), equipped with fallback and allowance handling so transactions sign instantly without looping auth prompts. Includes a dynamic **🟢 Testnet** badge.
 - **XLM Balance Fetcher**: Automatically interacts with Horizon Testnet to load and verify the associated account's native balances (`@stellar/stellar-sdk`).
+- **Address Book Management**: Locally persistent (`localStorage`) contact book allowing seamless quick-fills within the transaction forms to frequently trusted counterparties.
 - **Transaction Submission**: Execute native XLM transfers cleanly between Testnet accounts with automatic sequence building, signing, and submission entirely through the web client.
-- **Transaction History**: Pulls your last 10 native historical transfers (sent/received) directly from the blockchain into a clean UX list.
+- **Smart Transaction Insights**: Inbound Horizon responses are visually segmented to showcase Blockchain Metadata—including precise testnet **Fee Charged**, confirmation **Ledgers**, precise **Timestamps**, and stylized hash tracking.
+- **Transaction History**: Pulls your last 10 native historical transfers directly from the blockchain into a clean UX list—now upgraded with **All/Sent/Received Segment Filters** and embedded click-to-copy counter-party functionalities.
+- **Global Toast Notifications**: Intercepts, handles, and surfaces exact error origins flawlessly to the UI layer (ranging from *Insufficient Balances*, invalid addresses, or *Freighter User Rejections*) alongside standard Success/Info cues.
 - **Premium UX Design**: Fluid component animations, error boundaries, proper loading skeletons, blurred backdrops, and interactive UI feedback loops.
 
 ## 🚀 Tech Stack

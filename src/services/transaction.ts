@@ -61,10 +61,18 @@ export const buildAndSubmitTransaction = async ({
     return {
       success: true,
       hash: response.hash,
+      feeCharged: "100", // Standard base fee we requested in TransactionBuilder
+      ledger: response.ledger,
+      timestamp: new Date().toISOString(), // Submission confirmation time
     };
   } catch (error: any) {
     // Only log the message string to avoid Next.js dev overlay jumpscares with Axios errors
     console.log("Transaction failed:", error?.message || "Unknown error");
+    
+    // Check if user rejected the transaction via Freighter
+    if (error?.message?.includes("User declined") || error?.message?.includes("User rejected")) {
+       return { success: false, error: "Transaction was rejected by the user in Freighter." };
+    }
     
     // Check if destination account does not exist
     if (error?.response?.data?.extras?.result_codes?.operations?.includes("op_no_destination")) {
