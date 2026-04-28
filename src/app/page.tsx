@@ -31,9 +31,9 @@ export default function Home() {
         <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500"></div>
         <div className="flex justify-between items-center px-6 sm:px-10 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="StellerPay Logo" className="w-10 h-10 object-contain rounded-xl shadow-sm" />
+            <img src="/logo.png" alt="StellarPay Logo" className="w-10 h-10 object-contain rounded-xl shadow-sm" />
             <span className="text-xl sm:text-2xl font-bold tracking-tight text-slate-800 dark:text-white leading-none">
-              Steller<span className="text-blue-500 dark:text-blue-400 font-black">Pay</span>
+              Stellar<span className="text-blue-500 dark:text-blue-400 font-black">Pay</span>
             </span>
           </div>
           

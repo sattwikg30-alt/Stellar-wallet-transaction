@@ -48,6 +48,7 @@ npm run dev
 *(Replace the placeholders below with the actual screenshots of your dApp running)*
 
 ### 1. Wallet Connected
+
 ![Wallet Connected Placeholder](./public/screenshots/wallet_connected.png)
 *(Image showing the Connect Freighter button transitioning into the shortened public wallet key)*
 

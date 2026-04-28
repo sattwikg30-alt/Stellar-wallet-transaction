@@ -21,12 +21,12 @@ export const connectWallet = async (): Promise<string | null> => {
       throw new Error("Freighter wallet is not installed or accessible");
     }
     
-    // Explicitly prompt the user to allow this domain
+    
     await setAllowed();
     
     let result = await requestAccess();
     
-    // Check if result is a string (older versions of Freighter) or an object
+    
     if (typeof result === "string") {
        return result;
     } else if (result && result.address) {
