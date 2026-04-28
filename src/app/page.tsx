@@ -3,21 +3,25 @@
 import { useState } from "react";
 import { useWallet } from "@/hooks/useWallet";
 import { useBalance } from "@/hooks/useBalance";
+import { useHistory } from "@/hooks/useHistory";
 import { WalletButton } from "@/components/WalletButton";
 import { BalanceCard } from "@/components/BalanceCard";
 import { SendForm } from "@/components/SendForm";
 import { TransactionStatus } from "@/components/TransactionStatus";
+import { TransactionHistory } from "@/components/TransactionHistory";
 import { TransactionResult } from "@/types/transaction";
 
 export default function Home() {
   const { publicKey, isConnecting, connect, disconnect, error: walletError } = useWallet();
   const { balance, isLoading, error: balanceError, refreshBalance } = useBalance(publicKey);
+  const { history, isLoading: historyLoading, error: historyError, refreshHistory } = useHistory(publicKey);
   
   const [txResult, setTxResult] = useState<TransactionResult | null>(null);
 
   const handleTransactionSuccess = () => {
-    // Refresh balance after a successful transaction
+    // Refresh balance and history after a successful transaction
     refreshBalance();
+    refreshHistory();
   };
 
   return (
@@ -120,6 +124,16 @@ export default function Home() {
               </div>
             )}
           </div>
+
+          {publicKey && (
+            <div className="w-full flex justify-center animate-fade-in delay-200">
+              <TransactionHistory 
+                history={history}
+                isLoading={historyLoading}
+                error={historyError}
+              />
+            </div>
+          )}
         </main>
       </div>
 
