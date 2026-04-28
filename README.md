@@ -1,69 +1,94 @@
-# Stellar dApp - White Belt Level 1
+# 🚀 StellarPay: Fast, Simple XLM Payments
 
-A modern, production-ready decentralized application built on the Stellar Network using Next.js, featuring a clean UI and Freighter wallet integration.
+## 🌟 Project Overview
+**StellarPay** is a modern, production-ready decentralized application built on the **Stellar Network** that allows seamless, rapid native XLM transfers. Utilizing best-in-class Next.js server tools and the Freighter wallet extension, StellarPay acts as your premier interface to interact with the Stellar Testnet. 
 
-## 🌟 Features
+### Core Concepts on Stellar
+| StellarPay Action | Stellar Mechanism | Benefit |
+| :--- | :--- | :--- |
+| **Authenticate** | Freighter Wallet Extension | Instant, secure, and native key management without seed phrase exposure. |
+| **View Balances** | Horizon Testnet Queries | Real-time native XLM balance synchronization. |
+| **Send Payments** | Submit Transaction (XLM) | Lightning-fast asset transfers scaling across borders. |
+| **Transaction History** | Payment Operations Query | Immutable, filtered ledger showing all outbound/inbound transactions. |
 
-This dApp meets the Stellar White Belt Level 1 requirements and implements the following features flawlessly:
+---
 
-- **Wallet Connection Flow**: Seamless integration with the Freighter Wallet browser extension (`@stellar/freighter-api`), equipped with fallback and allowance handling so transactions sign instantly without looping auth prompts. Includes a dynamic **🟢 Testnet** badge.
-- **XLM Balance Fetcher**: Automatically interacts with Horizon Testnet to load and verify the associated account's native balances (`@stellar/stellar-sdk`).
-- **Address Book Management**: Locally persistent (`localStorage`) contact book allowing seamless quick-fills within the transaction forms to frequently trusted counterparties.
-- **Transaction Submission**: Execute native XLM transfers cleanly between Testnet accounts with automatic sequence building, signing, and submission entirely through the web client.
-- **Smart Transaction Insights**: Inbound Horizon responses are visually segmented to showcase Blockchain Metadata—including precise testnet **Fee Charged**, confirmation **Ledgers**, precise **Timestamps**, and stylized hash tracking.
-- **Transaction History**: Pulls your last 10 native historical transfers directly from the blockchain into a clean UX list—now upgraded with **All/Sent/Received Segment Filters** and embedded click-to-copy counter-party functionalities.
-- **Global Toast Notifications**: Intercepts, handles, and surfaces exact error origins flawlessly to the UI layer (ranging from *Insufficient Balances*, invalid addresses, or *Freighter User Rejections*) alongside standard Success/Info cues.
-- **Premium UX Design**: Fluid component animations, error boundaries, proper loading skeletons, blurred backdrops, and interactive UI feedback loops.
+## ✨ Features
+The StellarPay dashboard provides a comprehensive suite of tools for web3 users:
 
-## 🚀 Tech Stack
+### 1. 📊 Dashboard (Account Management)
+* **Wallet Integration:** Seamlessly connect and disconnect your Stellar wallet via the Freighter browser extension natively. Includes a dynamic **🟢 Testnet** badge.
+* **XLM Balance Fetcher:** Automatically interacts with Horizon Testnet to load and verify the associated account's native balances in real time.
 
-- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Web3 Integrations**: 
-  - `@stellar/stellar-sdk` (Core Horizon node queries & transaction builders)
-  - `@stellar/freighter-api` (In-browser key management & secure transaction signing)
+### 2. 💸 Payment Gateway (Transaction Flow)
+* **Address Book Management:** Locally persistent (`localStorage`) contact book allowing seamless quick-fills within the transaction forms to frequently trusted counterparties.
+* **Transaction Submission:** Execute native XLM transfers cleanly between Testnet accounts with automatic sequence building, signing, and submission entirely through the web client.
+* **Smart Transaction Insights:** Inbound Horizon responses are visually segmented to showcase Blockchain Metadata—including precise testnet **Fee Charged**, confirmation **Ledgers**, precise **Timestamps**, and stylized hash tracking.
+* **Global Toast Notifications:** Intercepts, handles, and surfaces exact error origins flawlessly to the UI layer (ranging from *Insufficient Balances*, invalid addresses, or *Freighter User Rejections*).
 
-## 🛠 Setup Instructions
+### 3. 📜 Ledger (Transaction History)
+* **Interactive History:** Pulls your last 10 native historical transfers directly from the blockchain into a clean UX list.
+* **Advanced Filters:** Now upgraded with **All/Sent/Received Segment Filters** and embedded click-to-copy counter-party functionalities.
+
+---
+
+## 💻 Tech Stack
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript |
+| **Styling** | Tailwind CSS v4 (Modern, dark-themed, and responsive design) |
+| **Blockchain** | Stellar Testnet |
+| **Blockchain SDK** | `@stellar/stellar-sdk` & `@stellar/freighter-api` |
+
+---
+
+## 💡 Why Stellar for Payments?
+Stellar is the ideal backbone for StellarPay due to:
+* **Instant Settlement (3-5 seconds):** Payment transfers are finalized almost immediately.
+* **Ultra-Low Fees:** Transaction fees are nominal (0.00001 XLM), making even micro-transactions completely viable.
+* **Open Financial Network:** Built directly by the Stellar developers linking global markets directly to each other efficiently.
+
+---
+
+## 🛠️ Getting Started (Testnet)
+
+This application is currently running on the Stellar Testnet.
 
 ### Prerequisites
-- Node.js LTS (v18 or above)
-- **Freighter Wallet Extension** installed in your browser.
-- A Freighter Wallet account funded with Testnet XLM (You can do this directly from within Freighter via their network settings if running on Testnet, or visit the [Stellar Laboratory Friendbot](https://laboratory.stellar.org/#account-creator?network=test)).
+1. **Stellar Wallet:** Install a compatible wallet (e.g., [Freighter](https://www.stellar.org/wallet-list)).
+2. **Funded Account:** Ensure you have Testnet XLM in your Freighter account (you can fund it directly within the extension's settings by utilizing the Friendbot).
 
-### Installation
-1. Clone this repository to your local machine.
-2. Install the necessary packages.
+### Installation Steps
+
+1. **Clone the Repository:**
+```bash
+git clone [YOUR_REPO_URL]
+cd steller
+```
+
+2. **Install Dependencies:**
 ```bash
 npm install
 ```
-3. Start the development server.
+
+3. **Run the Project:**
 ```bash
 npm run dev
 ```
-4. Navigate your browser to `http://localhost:3000`.
 
-## 📸 Screenshots
+4. **Access the Application:** Open your browser and navigate to `http://localhost:3000`.
 
-*(Replace the placeholders below with the actual screenshots of your dApp running)*
+---
 
-### 1. Wallet Connected
+## 📸 Application Screenshots
 
-![Wallet Connected Placeholder](./public/screenshots/wallet_connected.png)
-*(Image showing the Connect Freighter button transitioning into the shortened public wallet key)*
+![Wallet Connected](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385528/Screenshot_2026-04-28_184311_ftmml1.png)
 
-### 2. Balance Displayed
-![Balance Displayed Placeholder](./public/screenshots/balance_displayed.png)
-*(Image showing the testnet XLM balance rendered accurately in the Balance Card)*
+![Balance Displayed](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385690/Screenshot_2026-04-28_194435_cwywwd.png)
 
-### 3. Transaction Success
-![Transaction Success Placeholder](./public/screenshots/transaction_success.png)
-*(Image showing the green transaction successful status alert spanning with a quick hash-copy button)*
+![Transaction Success](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385813/Screenshot_2026-04-28_194632_a7kehg.png)
 
-### 4. Transaction History
-![Transaction History Placeholder](./public/screenshots/transaction_history.png)
-*(Image showing the transaction history section displaying Sent and Received payments)*
+![Transaction History](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385895/Screenshot_2026-04-28_194756_bpvel4.png)
 
-### Example Transaction Hash
-Here is an example structure of a testnet transaction hash successfully submitted by this dApp:
-`70f1a4e15a1a1f11e3b26c63a558bd0d4b901d819e99a803923dcc2fcfdb6c4e`
+🎬 **Drive screen recording ->** [https://drive.google.com/file/d/1qS6jRsXo22z_shPaKqWxqnP_NX1DCPqZ/view?usp=drive_link](https://drive.google.com/file/d/1qS6jRsXo22z_shPaKqWxqnP_NX1DCPqZ/view?usp=drive_link)
