@@ -43,7 +43,24 @@ The StellarPay dashboard provides a comprehensive suite of tools for web3 users:
 
 ---
 
-## 💡 Why Stellar for Payments?
+## � Project Structure
+
+```text
+steller/
+├── public/              # Static assets (images, icons, etc.)
+├── src/
+│   ├── app/             # Next.js App Router (pages, layout, globals)
+│   ├── components/      # UI components (BalanceCard, SendForm, etc.)
+│   ├── hooks/           # Custom React hooks (useWallet, useBalance, etc.)
+│   ├── services/        # Stellar SDK logic (transactions, wallet, history)
+│   └── types/           # TypeScript interfaces and types
+├── package.json         # Project dependencies and scripts
+└── tsconfig.json        # TypeScript configuration
+```
+
+---
+
+## �💡 Why Stellar for Payments?
 Stellar is the ideal backbone for StellarPay due to:
 * **Instant Settlement (3-5 seconds):** Payment transfers are finalized almost immediately.
 * **Ultra-Low Fees:** Transaction fees are nominal (0.00001 XLM), making even micro-transactions completely viable.
@@ -63,8 +80,8 @@ This application is currently running on the Stellar Testnet.
 
 1. **Clone the Repository:**
 ```bash
-git clone [YOUR_REPO_URL]
-cd steller
+git clone [https://github.com/sattwikg30-alt/Stellar-wallet-transaction.git]
+cd stellar
 ```
 
 2. **Install Dependencies:**
@@ -84,11 +101,15 @@ npm run dev
 ## 📸 Application Screenshots
 
 ![Wallet Connected](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385528/Screenshot_2026-04-28_184311_ftmml1.png)
+Wallet Connected
 
 ![Balance Displayed](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385690/Screenshot_2026-04-28_194435_cwywwd.png)
+Balance Displayed
 
 ![Transaction Success](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385813/Screenshot_2026-04-28_194632_a7kehg.png)
+Transaction Success
 
 ![Transaction History](https://res.cloudinary.com/dzjn1u0ln/image/upload/v1777385895/Screenshot_2026-04-28_194756_bpvel4.png)
+Transaction History
 
 🎬 **Drive screen recording ->** [https://drive.google.com/file/d/1qS6jRsXo22z_shPaKqWxqnP_NX1DCPqZ/view?usp=drive_link](https://drive.google.com/file/d/1qS6jRsXo22z_shPaKqWxqnP_NX1DCPqZ/view?usp=drive_link)
